@@ -26,16 +26,24 @@ public class Cart {
 
     public float prepareTax(){
         int i=0;
+        tax=0;total=0;
         for(Good g:list){
-            if(g.getAttr().contains("Taxable")&& g.getAttr().get("Taxable")!= false)
-                tax+=qty.get(i)/10;
+            if(g.getAttr().contains("Taxable"))
+                tax+= g.getPrice()/10;
 
             if(g.getName().contains("impoted"))
-                tax+=qty.get(i)/5;
+                tax+=g.getPrice()/20;
+
+            total+=qty.get(i)*g.getPrice();
             i++;
 
         }
+        return tax;
 
+    }
+
+    public float prepareTotal(){
+        return total;
     }
 
 

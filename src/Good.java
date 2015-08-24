@@ -13,6 +13,10 @@ public class Good {
     public String getName(){
         return name;
     }
+
+    public double getPrice(){
+        return price;
+    }
     public Good(String name,HashMap<String,Object> attrs,double price){
 
         this.attribute = new ArrayList();
@@ -21,7 +25,7 @@ public class Good {
             this.attribute.add(new ProductAttribute(attr, attrs.get(attr)));
         }
         //default is true
-        this.attribute.add(new ProductAttribute("Taxable",true));
+        //this.attribute.add(new ProductAttribute("Taxable",true));
         this.price = price;
         this.name = name;
     }
@@ -32,7 +36,7 @@ public class Good {
             for(String attr:attrs.keySet()) {
                 this.attribute.add(new ProductAttribute(attr, attrs.get(attr)));
             }
-        this.attribute.add(new ProductAttribute("Taxable",taxable));
+        this.attribute.add(new ProductAttribute("Taxable",false));
 
         this.price = price;
         this.name = name;
