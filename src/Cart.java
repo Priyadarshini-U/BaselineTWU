@@ -11,7 +11,7 @@ public class Cart {
 
         Good product=null;
         if(Shelf.instance().has(name,qty)){
-            product=shelf.instance.get(name,qty);
+            product=shelf.instance().get(name,qty);
         }
         return product;
 
