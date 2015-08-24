@@ -1,3 +1,4 @@
 git add README.md
-git commit -m $1
+echo $1
+git commit -m '"'$1'"'
 git push -u origin master
