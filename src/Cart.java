@@ -12,13 +12,16 @@ public class Cart {
 
     public Cart() {
        list = new ArrayList<Good>();
+        qty= new ArrayList();
     }
-    public Good addItem(int qty,String name,float cost){
+    public Good addItem(int qt,String name,float cost){
 
         Good product=null;
-        if(Shelf.instance().has(name, qty)){
-            product=Shelf.instance().get(name, qty,cost);
+        if(Shelf.instance().has(name, qt)){
+            product=Shelf.instance().get(name, qt,cost);
         }
+        list.add(product);
+        qty.add(new Integer(qt));
         return product;
 
 
