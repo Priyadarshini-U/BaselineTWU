@@ -15,10 +15,10 @@ public class Good {
         this.attribute = new ArrayList();
         if(attrs != null && attrs.size() > 0)
         for(String attr:attrs.keySet()) {
-            this.attribute = new ProductAttribute(attr, attrs.get(attr));
+            this.attribute.add(new ProductAttribute(attr, attrs.get(attr)));
         }
         //default is true
-        this.attribute.add(new ProductAttribute("Taxable",taxable));
+        this.attribute.add(new ProductAttribute("Taxable",true));
         this.price = price;
         this.name = name;
     }
@@ -27,12 +27,13 @@ public class Good {
         this.attribute = new ArrayList();
         if(attrs != null && attrs.size() > 0)
             for(String attr:attrs.keySet()) {
-                this.attribute = new ProductAttribute(attr, attrs.get(attr));
+                this.attribute.add(new ProductAttribute(attr, attrs.get(attr)));
             }
         this.attribute.add(new ProductAttribute("Taxable",taxable));
 
         this.price = price;
         this.name = name;
     }
+
 
 }
