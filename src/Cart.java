@@ -31,8 +31,12 @@ public class Cart {
         int i=0;
         tax=0;total=0;
         for(Good g:list){
-            if(g.getAttr().contains("Taxable"))
-                tax+= g.getPrice()/10;
+            for(ProductAttribute pr : g.getAttr()){
+                if(pr.name.equals("Taxable") && ! pr.getValue().equals(false))
+                    tax+= g.getPrice()/10;
+            }
+
+
 
             if(g.getName().contains("impoted"))
                 tax+=g.getPrice()/20;

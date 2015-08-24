@@ -10,16 +10,17 @@ public class PrepareReceiptService {
     public static void getReceipt(){
         Cart c = new Cart();
         Scanner s = new Scanner(System.in);
+
         //try {
             while (s.hasNext()) {
-                int qty = s.nextInt();
+                    int qty = s.nextInt();
                 String rest = s.nextLine();
-                String[] params = rest.split("at");
+                String[] params = rest.split("at",1);
                 System.out.println(params[0]+" "+params[1]);
                 String name = params[0];
                 float cost = Float.parseFloat(params[1]);
                 c.addItem(qty, name, cost);
-                System.out.println(qty + name + ":" + qty * cost);
+                //System.out.println(qty + name + ":" + qty * cost);
                 System.out.println("Sales Tax:" + c.prepareTax());
                 System.out.println("Total:" + c.prepareTotal());
             }
