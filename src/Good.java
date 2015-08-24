@@ -10,6 +10,9 @@ public class Good {
     private ArrayList<ProductAttribute> attribute;
     private double price;
 
+    public String getName(){
+        return name;
+    }
     public Good(String name,HashMap<String,Object> attrs,double price){
 
         this.attribute = new ArrayList();
@@ -33,6 +36,10 @@ public class Good {
 
         this.price = price;
         this.name = name;
+    }
+
+    public ArrayList<ProductAttribute> getAttr(){
+        return attribute;
     }
 
 

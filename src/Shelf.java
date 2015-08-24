@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Shelf {
 
     private static  ArrayList<Good> list = new ArrayList<Good>();
-    private static  ArrayList<String> ntaxable = new ArrayList<String>(){{add("food");add("book")}};
+    private static  ArrayList<String> ntaxable = new ArrayList<String>(){{add("food");add("book");}};
 
     private Shelf(){}
     private static Shelf ins;
@@ -17,7 +17,7 @@ public class Shelf {
         return ins;
     }
 
-    public boolean has(String name, int qty,float price){
+    public boolean has(String name, int qty){
         //default
         return true;
 
